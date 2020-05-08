@@ -1,0 +1,49 @@
+@function modify-color($position, $color, $dark) {
+  $value: 10% * $position;
+  @return if($dark == 0, lighten($color, $value), darken($color, $value));
+}
+
+@for $i from 1 through 3 {
+  $container-bc: red;
+  $container-color: blue;
+
+  @if $i == 2 {
+    $container-bc: blue;
+    $container-color: gold;
+  } @else if $i == 3 {
+    $container-bc: green;
+    $container-color: purple;
+  }
+
+  .container-#{$i} {
+    display: flex;
+    .box {
+      border: 1px solid black;
+      padding: 2em;
+      margin: 0.2em;
+    }
+
+    .base-color {
+      background-color: $container-bc;
+      color: white;
+    }
+
+    $box: 1;
+    @while $box <= 4 {
+      .lighten-#{$box} {
+        background-color: modify-color($box, $container-bc, 0);
+        color: modify-color($box, $container-color, 0);
+      }
+      $box: $box + 1;
+    }
+
+    $boxDark: 1;
+    @while $boxDark <= 4 {
+      .darken-#{$boxDark} {
+        background-color: modify-color($boxDark, $container-bc, 1);
+        color: modify-color($boxDark, $container-color, 1);
+      }
+      $boxDark: $boxDark + 1;
+    }
+  }
+}
