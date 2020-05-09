@@ -11,15 +11,15 @@
     $container-bc: blue;
     $container-color: gold;
   } @else if $i == 3 {
-    $container-bc: green;
-    $container-color: purple;
+    $container-bc: lime;
+    $container-color: violet;
   }
 
   .container-#{$i} {
     display: flex;
     .box {
-      border: 1px solid black;
-      padding: 2em;
+      border-radius: 0.4em;
+      padding: 2em 1em;
       margin: 0.2em;
     }
 
