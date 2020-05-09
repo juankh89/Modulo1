@@ -1,0 +1,44 @@
+@import "./themes/tema-a.scss";
+//@import "./themes/tema-b.scss"; //Uncomment this line to use theme-b
+
+$default-font: "Comic Neue", cursive;
+.container {
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  div:nth-child(-n + 3),
+  div:last-child {
+    border: 1px solid $color-border;
+    border-radius: $radious;
+    padding: 1em;
+    padding-bottom: 2em;
+    width: 5%;
+    font-family: $default-font;
+  }
+  div:first-child {
+    background-color: $background-base;
+  }
+  div:nth-child(2) {
+    background-color: $background-important;
+  }
+  div:nth-child(3) {
+    background-color: $background-warning;
+  }
+  div:last-child {
+    box-shadow: $box-shadow;
+  }
+  div:nth-child(4) {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-family: $principal-font;
+    font-size: 0.9em;
+  }
+  div:nth-child(5) {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-family: $sencondary-font;
+    font-size: 0.8em;
+  }
+}
