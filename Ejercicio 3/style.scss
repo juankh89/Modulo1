@@ -1,0 +1,38 @@
+.container {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #006a7b;
+
+    .item {
+      padding: 1em;
+      color: white;
+      &:hover {
+        background-color: #2f4858;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .content {
+    flex-direction: column;
+    align-self: center;
+    & span {
+      display: flex;
+      justify-content: center;
+    }
+    content::after {
+      content: "caca";
+    }
+  }
+  body {
+    margin: 0;
+    padding: 1em;
+  }
+}
