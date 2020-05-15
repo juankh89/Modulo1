@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: lightgray;
+}
+.card {
+  background-color: whitesmoke;
+  width: 25%;
+  margin: 2em 2em;
+  display: grid;
+  grid-template-columns: 1em auto 1em;
+  grid-template-rows: auto auto auto auto auto;
+  grid-row-gap: 10px;
+  grid-template-areas:
+    "image image image"
+    ". title ."
+    ". description ."
+    ". date ."
+    ". button .";
+
+  .image {
+    grid-area: image;
+    img {
+      width: 100%;
+    }
+  }
+  .title {
+    grid-area: title;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  .description {
+    grid-area: description;
+    font-family: "Raleway", sans-serif;
+  }
+  .published {
+    grid-area: date;
+    text-align: end;
+    span {
+      color: yellowgreen;
+    }
+  }
+  .button {
+    grid-area: button;
+    text-align: center;
+    button {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      color: white;
+      font-size: 1em;
+      background-color: yellowgreen;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
